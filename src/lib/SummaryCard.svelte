@@ -22,7 +22,7 @@
         {:else if metricCountChange < 0}
             <img src="images/icon-down.svg" alt="down icon">
         {/if}
-        <span class="metric-count-change {metricCountChange > 0 ? 'increase' : 'decrease'}">{metricCountChange} Today</span>
+        <span class="metric-count-change {metricCountChange > 0 ? 'increase' : 'decrease'}">{Math.abs(metricCountChange)} Today</span>
     </div>
 </div>
 
@@ -35,7 +35,10 @@
         height: 216px;
         width: 255px;
         border-radius: 5px;
+    }
 
+    .card:hover {
+        background: var(--card-bg-hover);
     }
 
     .card.facebook {
@@ -45,7 +48,14 @@
         border-top: 4px solid var(--twitter);
     }
     .card.instagram {
-        border-top: 4px solid var(--instagram);
+        /* https://codyhouse.co/nuggets/css-gradient-borders */
+        background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+            linear-gradient(225deg, #DF4896 0%, #EE877E 50.91%, #FDC366 100%) border-box;
+        border-top: 4px solid transparent;
+    }
+    .card.instagram:hover{
+        background: linear-gradient(var(--card-bg-hover), var(--card-bg-hover)) padding-box,
+            linear-gradient(225deg, #DF4896 0%, #EE877E 50.91%, #FDC366 100%) border-box;
     }
     .card.youtube {
         border-top: 4px solid var(--youtube);
@@ -53,6 +63,7 @@
 
     .top-row {
         display: flex;
+        align-items: center;
         gap: 8px;
         margin-top: 32px;
     }
@@ -67,6 +78,7 @@
     .middle-row {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 9px;
         margin-top: 28px;
         margin-bottom: 25px;
@@ -85,6 +97,7 @@
         line-height: 0.908rem;
         color: var(--text-secondary);
         text-transform: uppercase;
+        letter-spacing: 5px;
     }
 
     .bottom-row {
