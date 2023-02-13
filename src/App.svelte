@@ -130,12 +130,15 @@
 <style>
 
     header {
-        max-width: 1110px;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 2.875rem;
+    }
+    
+    main {
+        width: 100%;
     }
 
     h1 {
@@ -149,14 +152,13 @@
     .summary-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 1.875rem;
+        column-gap: 1.875rem;
         margin-bottom: 2.875rem;
-        row-gap: 1.5rem;
     }
 
     .overview-container {
         display: grid;
-        grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+        grid-template: repeat(2, 1fr) / repeat(4, 1fr);
         column-gap: 1.875rem;
         row-gap: 1.5rem;
     }
@@ -170,6 +172,66 @@
         border-radius: 0 0 20px 20px;
         background: var(--top-bg-pattern);
         z-index: -1;
+    }
+
+    @media (max-width: 1158px) {
+
+        .summary-container {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            row-gap: 1.5rem;
+        }
+
+        .overview-container {
+            grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+        }
+
+    }
+
+    @media (max-width: 588px) {
+        
+        header {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            line-height: 1.816rem;
+        }
+
+        h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .header-left {
+            width: 100%;
+        }
+
+        .header-left::after {
+            content: '';
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--mobile-hr);
+        }
+
+        .header-right {
+            width: 100%;
+        }
+        
+        .summary-container {
+            grid-template: auto / 1fr;
+        }
+
+        .overview-container {
+            grid-template: auto / 1fr;
+        }
+
     }
 
 </style>

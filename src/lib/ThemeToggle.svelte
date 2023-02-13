@@ -93,4 +93,12 @@
         background: var(--toggle-bg-hover);
     }
 
+    @media (max-width: 588px) {
+
+        .container {
+            justify-content: space-between;
+        }
+
+    }
+
 </style>

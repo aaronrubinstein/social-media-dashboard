@@ -33,7 +33,7 @@
         align-items: center;
         background: var(--card-bg);
         height: 216px;
-        width: 255px;
+        width: 100%;
         border-radius: 5px;
     }
 

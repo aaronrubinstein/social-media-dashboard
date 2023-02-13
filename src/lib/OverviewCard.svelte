@@ -32,7 +32,7 @@
         gap: 21px;
         background: var(--card-bg);
         height: 125px;
-        width: 255px;
+        width: 100%;
         border-radius: 5px;
         padding: 26px 31px 19px 24px;
     }
